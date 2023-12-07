@@ -1,8 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class UIScreenScript : MonoBehaviour
+[Serializable]
+public class ShopCategory
+{ 
+    private string name;
+
+}
+
+
+public class ShopElementsPlacer : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
