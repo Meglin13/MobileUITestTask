@@ -1,10 +1,13 @@
+using System.IO;
 using TMPro;
+using Unity.Services.Economy.Model;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopItemScript : MonoBehaviour
 {
-    private ShopItem item;
+    private VirtualPurchaseDefinition item;
 
     [SerializeField]
     private Image icon;
@@ -22,28 +25,55 @@ public class ShopItemScript : MonoBehaviour
     private Button buyButton;
 
     [SerializeField]
-    private GameObject PurchasedIcon;
+    private GameObject buyIcon;
 
-    public void SetItem(ShopItem item)
+    [SerializeField]
+    private GameObject purchasedIcon;
+
+    public void SetItem(VirtualPurchaseDefinition item)
     {
         this.item = item;
 
-        if (item.LevelRequired < LevelManager.CurrentLevel)
+        price.text = item.Costs[0].Amount.ToString();
+
+        text.text = item.CustomData["ItemName"].ToString();
+
+        var level = item.CustomData["LevelRequired"].ToString();
+
+        if (int.Parse(level) < LevelManager.CurrentLevel)
         {
             levelText.gameObject.SetActive(true);
-            levelText.text = $"LV. {item.LevelRequired}";
+            levelText.text = $"LV. {level}";
             buyButton.interactable = false;
         }
         else
         {
             levelText.gameObject.SetActive(false);
-            icon.sprite = item.Icon;
             buyButton.interactable = true;
+
+            var path = item.CustomData["LevelRequired"].ToString();
+
+            if (path != string.Empty)
+            {
+                icon.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+            }
         }
+
+        //TODO: Обозначение купленной покупки
+        //if (true)
+        //{
+        //    buyIcon.SetActive(false);
+        //    purchasedIcon.SetActive(true);
+        //}
+        //else
+        //{
+        buyIcon.SetActive(true);
+        purchasedIcon.SetActive(false);
+        //}
     }
 
     public void BuyButtonClick()
     {
-
+        
     }
 }
