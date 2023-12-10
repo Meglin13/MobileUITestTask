@@ -199,6 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 818908771656425375}
+  lockIcon: {fileID: 21300000, guid: f749a4bc848bfe14f9a13e0afeeaf533, type: 3}
+  placeHolderIcon: {fileID: 21300000, guid: 28b357b363c63f244b15100dfd1a35c9, type: 3}
   text: {fileID: 8446411135327390220}
   price: {fileID: 4155722618678149304}
   levelText: {fileID: 2679827729884177226}

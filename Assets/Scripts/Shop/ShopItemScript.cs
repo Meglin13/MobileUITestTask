@@ -25,6 +25,12 @@ public class ShopItemScript : MonoBehaviour
     private Image icon;
 
     [SerializeField]
+    private Sprite lockIcon;
+
+    [SerializeField] 
+    private Sprite placeHolderIcon;
+
+    [SerializeField]
     private TextMeshProUGUI text;
 
     [SerializeField]
@@ -52,12 +58,12 @@ public class ShopItemScript : MonoBehaviour
 
         text.text = item.Name;
         
-        //TODO: Разблокировка по уровню
         if (item.LevelRequired > LevelManager.Instance.CurrentLevel)
         {
             levelText.gameObject.SetActive(true);
             levelText.text = $"LV. {item.LevelRequired}";
             buyButton.interactable = false;
+            icon.sprite = lockIcon;
         }
         else
         {
@@ -67,6 +73,10 @@ public class ShopItemScript : MonoBehaviour
             if (item.Icon != null)
             {
                 icon.sprite = item.Icon;
+            }
+            else
+            {
+                icon.sprite = placeHolderIcon;
             }
         }
 
