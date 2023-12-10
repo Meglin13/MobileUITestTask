@@ -151,10 +151,12 @@ GameObject:
   m_Component:
   - component: {fileID: 818908770872001685}
   - component: {fileID: 213564516886587354}
+  - component: {fileID: 6231056887346300379}
   - component: {fileID: 818908770872001687}
   - component: {fileID: 818908770872001686}
   - component: {fileID: 2343688863905393572}
   - component: {fileID: 5570502853721228716}
+  - component: {fileID: 6159395571207863162}
   m_Layer: 5
   m_Name: ShopItem
   m_TagString: Untagged
@@ -203,6 +205,58 @@ MonoBehaviour:
   buyButton: {fileID: 3159474719587858252}
   buyIcon: {fileID: 8242051014489197035}
   purchasedIcon: {fileID: 528462156288476138}
+--- !u!114 &6231056887346300379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818908770872001684}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productId: 
+  buttonType: 0
+  consumePurchase: 1
+  onTransactionsRestored:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6159395571207863162}
+        m_TargetAssemblyTypeName: IAPElementSetup, Assembly-CSharp
+        m_MethodName: OnProductPurchased
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  onProductFetched:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6159395571207863162}
+        m_TargetAssemblyTypeName: IAPElementSetup, Assembly-CSharp
+        m_MethodName: OnProductFetched
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  button: {fileID: 3159474719587858252}
 --- !u!222 &818908770872001687
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -282,11 +336,25 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 1000
-  m_PreferredHeight: 250
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!114 &6159395571207863162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818908770872001684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858c666f0a72dd440bb2f7b904421959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 8446411135327390220}
+  priceText: {fileID: 4155722618678149304}
 --- !u!1 &818908771611963308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1224,6 @@ GameObject:
   - component: {fileID: 2348788183107332526}
   - component: {fileID: 3159474719587858252}
   - component: {fileID: 3400519877064651709}
-  - component: {fileID: 3988705210461056819}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1306,34 +1373,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &3988705210461056819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583462348851359004}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productId: 
-  buttonType: 0
-  consumePurchase: 1
-  onTransactionsRestored:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-  onProductFetched:
-    m_PersistentCalls:
-      m_Calls: []
-  button: {fileID: 3159474719587858252}
 --- !u!1 &8808571203587778323
 GameObject:
   m_ObjectHideFlags: 0

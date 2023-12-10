@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 7250814104934401155}
   - component: {fileID: 3847561866683804905}
   - component: {fileID: 6149935032226571731}
+  - component: {fileID: 4081744483069509236}
   m_Layer: 0
   m_Name: Day
   m_TagString: Untagged
@@ -362,6 +363,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4081744483069509236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857033697304749993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce265bda477c30a4894b5151f0605f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayText: {fileID: 901358741}
+  amount: {fileID: 3552247930835767005}
 --- !u!1 &8911282933947313586
 GameObject:
   m_ObjectHideFlags: 0
