@@ -45,7 +45,10 @@ public class UIManager : MonoBehaviour
 
     private void OpenOverlay(UIWindow overlay)
     {
-        CloseOverlay();
+        if (currentOverlay != null)
+        {
+            currentOverlay.OnClose(); 
+        }
 
         overlayBackground.OnOpen();
         overlay.OnOpen();

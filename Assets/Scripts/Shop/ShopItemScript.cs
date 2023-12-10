@@ -53,7 +53,7 @@ public class ShopItemScript : MonoBehaviour
         text.text = item.Name;
         
         //TODO: Разблокировка по уровню
-        if (item.LevelRequired > LevelManager.CurrentLevel)
+        if (item.LevelRequired > LevelManager.Instance.CurrentLevel)
         {
             levelText.gameObject.SetActive(true);
             levelText.text = $"LV. {item.LevelRequired}";
@@ -89,7 +89,7 @@ public class ShopItemScript : MonoBehaviour
     {
         if (item != null)
         {
-            if (isPurchased || item.LevelRequired > LevelManager.CurrentLevel)
+            if (isPurchased || item.LevelRequired > LevelManager.Instance.CurrentLevel)
             {
                 return;
             }

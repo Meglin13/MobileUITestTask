@@ -28,6 +28,11 @@ public class ShopCategoryScript : MonoBehaviour
 
     private List<ShopItemScript> placedItems = new();
 
+    private void OnEnable()
+    {
+        Load();
+    }
+
     public void Load()
     {
         categoryName.text = category.ToString();

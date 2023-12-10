@@ -15,7 +15,7 @@ public class PlayerPrefsSetup : MonoBehaviour
             PlayerPrefs.SetString("LastRewardDate", "2001-01-01");
             PlayerPrefs.SetInt("LastDay", 0);
 
-            PlayerPrefs.SetInt("Level", 0);
+            PlayerPrefs.SetInt("Level", 1);
         }
     }
 }

@@ -41,6 +41,9 @@ public class DailyReward : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI rewardAmountText;
 
+    [SerializeField]
+    private TextMeshProUGUI rewardSliderMeter;
+
     //TODO: ≈жедневные награды
     private void OnEnable()
     {
@@ -52,7 +55,8 @@ public class DailyReward : MonoBehaviour
             isRewardAvailable = true;
         }
 
-        rewardSlider.fillAmount = currentDay / 7;
+        rewardSlider.fillAmount = (float)currentDay / 7;
+        rewardSliderMeter.text = $"{currentDay}/7";
 
         for (int i = 0; i < 6; i++)
         {
@@ -98,7 +102,7 @@ public class DailyReward : MonoBehaviour
 
             UIManager.Instance.SwitchWindow(rewardWindow);
 
-            rewardDayText.text = $"DAY {day}";
+            rewardDayText.text = $"DAY {day + 1}";
             rewardAmountText.text = $"X{amount}";
         }
         else
